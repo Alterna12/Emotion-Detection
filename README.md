@@ -1,2 +1,26 @@
 # Emotion-Detection
 Speech based emotions detection using MATLAB 
+
+Methodology
+
+The emotion detection system is developed using a machine learning-based audio classification approach. The overall workflow consists of data preprocessing, feature extraction, model training, and evaluation.
+
+1 Data Preprocessing
+
+Audio files in .wav format are first loaded and standardized. If the audio is in stereo format, it is converted to mono by averaging the channels. The audio signal is then normalized to ensure consistent amplitude levels across all samples, reducing bias during training.
+
+2 Feature Extraction
+
+To represent emotional characteristics in speech, Mel-Frequency Cepstral Coefficients (MFCCs) are extracted from each audio file. MFCCs are chosen because they effectively capture human auditory perception and are widely used in speech and emotion recognition tasks. The mean value of MFCC features is computed for each audio sample to create a fixed-length feature vector.
+
+3 Label Encoding
+
+Emotion labels are derived from the dataset and converted into numerical form using label encoding. This allows the machine learning model to process categorical emotion classes efficiently.
+
+4 Model Training
+
+The extracted features are split into training and testing sets. A supervised machine learning classifier (such as Support Vector Machine or Random Forest) is trained using the training data. The model learns to associate MFCC feature patterns with corresponding emotion labels.
+
+5 Model Evaluation
+
+The trained model is evaluated using the testing dataset. Performance metrics such as accuracy, precision, recall, and F1-score are used to measure the effectiveness of the emotion classification system.

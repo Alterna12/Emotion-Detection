@@ -25,3 +25,9 @@ The results show that audio-based emotion detection is feasible using MFCC featu
 Misclassification primarily occurs between emotions with similar acoustic characteristics, such as neutral and calm, or happy and excited. This suggests that emotional overlap in speech can affect classification performance. Increasing dataset size and incorporating additional features such as chroma or spectral contrast could further improve accuracy.
 
 Overall, the system demonstrates good generalization on unseen data and validates the effectiveness of machine learning techniques for emotion detection. The results confirm that audio emotion recognition can be applied in real-world applications such as human-computer interaction, virtual assistants, and mental health monitoring systems.
+
+# Code
+1. Download SMOTE 
+2. Use this code : https://github.com/Alterna12/Emotion-Detection/blob/main/Final_Projek_v5.m
+3. Run this for the app in MATLAB : https://github.com/Alterna12/Emotion-Detection/blob/main/app1.mlapp
+# PPT File 

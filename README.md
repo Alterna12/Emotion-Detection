@@ -18,3 +18,10 @@ The extracted features are split into training and testing sets. A supervised ma
 
 5. Model Evaluation
 The trained model is evaluated using the testing dataset. Performance metrics such as accuracy, precision, recall, and F1-score are used to measure the effectiveness of the emotion classification system.
+
+# Analysis
+The results show that audio-based emotion detection is feasible using MFCC features and supervised learning models. The classifier is able to recognize emotional patterns in speech with reasonable accuracy, indicating that MFCCs effectively capture emotional cues such as pitch, tone, and intensity.
+
+Misclassification primarily occurs between emotions with similar acoustic characteristics, such as neutral and calm, or happy and excited. This suggests that emotional overlap in speech can affect classification performance. Increasing dataset size and incorporating additional features such as chroma or spectral contrast could further improve accuracy.
+
+Overall, the system demonstrates good generalization on unseen data and validates the effectiveness of machine learning techniques for emotion detection. The results confirm that audio emotion recognition can be applied in real-world applications such as human-computer interaction, virtual assistants, and mental health monitoring systems.

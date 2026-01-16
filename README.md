@@ -31,3 +31,4 @@ Overall, the system demonstrates good generalization on unseen data and validate
 2. Use this code : https://github.com/Alterna12/Emotion-Detection/blob/main/Final_Projek_v5.m
 3. Run this for the app in MATLAB : https://github.com/Alterna12/Emotion-Detection/blob/main/app1.mlapp
 # PPT File 
+https://github.com/Alterna12/Emotion-Detection/blob/main/PPT%20Final%20Project%20Emotion%20Detection.pdf

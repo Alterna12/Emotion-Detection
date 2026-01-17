@@ -103,11 +103,13 @@ Expected Output
     F1-score: 0.9498
 
 # Analysis
-The results show that audio-based emotion detection is feasible using MFCC features and supervised learning models. The classifier is able to recognize emotional patterns in speech with reasonable accuracy, indicating that MFCCs effectively capture emotional cues such as pitch, tone, and intensity.
+The results confirm that audio-based emotion detection is highly effective using MFCC features and SVM classification. The classifier achieves excellent accuracy (94.92%), demonstrating that MFCCs effectively capture emotional cues related to pitch, tone, and spectral energy in speech.
 
-Misclassification primarily occurs between emotions with similar acoustic characteristics, such as neutral and calm, or happy and excited. This suggests that emotional overlap in speech can affect classification performance. Increasing dataset size and incorporating additional features such as chroma or spectral contrast could further improve accuracy.
+Misclassification primarily occurs between emotions with similar acoustic characteristics, such as happiness and anger (both high-energy states) or disgust and fear (sharing certain spectral patterns). This indicates that emotional overlap in speech can pose a challenge even for a well-performing system.
 
-Overall, the system demonstrates good generalization on unseen data and validates the effectiveness of machine learning techniques for emotion detection. The results confirm that audio emotion recognition can be applied in real-world applications such as human-computer interaction, virtual assistants, and mental health monitoring systems.
+The use of SMOTE for class balancing and grid search for hyperparameter tuning contributed to robust generalization on unseen data. The high precision (95.58%) and recall (94.88%) further validate the reliability of the machine learning pipeline.
+
+Overall, the system not only demonstrates the feasibility of speech emotion recognition but also achieves performance suitable for real-world applications such as human-computer interaction, virtual assistants, and mental health monitoring—validating MFCC and SVM as a strong, practical approach to the task.
 
 # Code
 1. Download SMOTE 

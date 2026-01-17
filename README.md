@@ -4,20 +4,72 @@ Speech based emotions detection using MATLAB
 # Methodology
 The emotion detection system is developed using a machine learning-based audio classification approach. The overall workflow consists of data preprocessing, feature extraction, model training, and evaluation.
 
-1. Data Preprocessing
-Audio files in .wav format are first loaded and standardized. If the audio is in stereo format, it is converted to mono by averaging the channels. The audio signal is then normalized to ensure consistent amplitude levels across all samples, reducing bias during training.
+1. Data Collection
+  - Dataset: 535 WAV audio files
+  - Emotions (7 classes): Anger, Boredom, Disgust, Fear, Happiness, Sadness, Neutral
+  - Split: 80% training, 20% testing (hold-out validation)
+2. Signal Preprocessing
+  - Amplitude Normalization: Standardizes audio volume
+  - Noise Reduction: Removes background noise using filtering
+  - Framing: Splits audio into 25ms frames with 10ms overlap
+  - Windowing: Applies Hamming window to each frame
+3. Feature Extraction
+  - Primary Feature: Mel-Frequency Cepstral Coefficients (MFCC)
+  - MFCC Extraction Steps:
+ 1. Pre-emphasis Filtering: Amplifies high frequencies
+ 2. Hamming Windowing: Reduces spectral leakage
+ 3. FFT: Converts to frequency domain
+ 4. Mel Filter Bank: Applies perceptually-inspired scaling
+ 5. DCT: Produces final cepstral coefficients
+Additional Features: Pitch, Energy, Formants
+4. Data Balancing & Classification
+4.1 Data Balancing:
+- Technique: Synthetic Minority Over-sampling Technique (SMOTE)
+- Purpose: Addresses class imbalance in training data
+- Method: Generates synthetic samples for minority classes
+4.2 Classification Model:
+- Algorithm: Support Vector Machine (SVM)
+- Kernel: Radial Basis Function (RBF)
+- Multi-class Strategy: One-vs-All
+4.3 Parameter Optimization:
+- Method: Grid Search with 5-fold cross-validation
+- Optimized Parameters:
+        KernelScale: 9
+        BoxConstraint: 9
+        CV Accuracy: 94.15%
+5. Evaluation Metrics
+  
+The final model is evaluated using:
 
-2. Feature Extraction
-To represent emotional characteristics in speech, Mel-Frequency Cepstral Coefficients (MFCCs) are extracted from each audio file. MFCCs are chosen because they effectively capture human auditory perception and are widely used in speech and emotion recognition tasks. The mean value of MFCC features is computed for each audio sample to create a fixed-length feature vector.
+    Accuracy: Overall classification correctness
 
-3. Label Encoding
-Emotion labels are derived from the dataset and converted into numerical form using label encoding. This allows the machine learning model to process categorical emotion classes efficiently.
+    Precision: Reliability of positive predictions
 
-4. Model Training
-The extracted features are split into training and testing sets. A supervised machine learning classifier (such as Support Vector Machine or Random Forest) is trained using the training data. The model learns to associate MFCC feature patterns with corresponding emotion labels.
+    Recall: Completeness of positive predictions
 
-5. Model Evaluation
-The trained model is evaluated using the testing dataset. Performance metrics such as accuracy, precision, recall, and F1-score are used to measure the effectiveness of the emotion classification system.
+    F1-score: Harmonic mean of precision and recall
+
+    Confusion Matrix: Detailed class-wise performance
+
+Key Implementation Notes
+
+    Platform: MATLAB R2021a or later
+
+    Toolboxes Used: Signal Processing, Statistics and Machine Learning
+
+    Key MATLAB Functions: mfcc(), fitcsvm(), gridsearch()
+
+    Processing Time: ~15 minutes for full pipeline (may vary with hardware)
+
+Expected Output
+
+    Testing Accuracy: 94.92%
+
+    Precision: 0.9558
+
+    Recall: 0.9488
+
+    F1-score: 0.9498
 
 # Analysis
 The results show that audio-based emotion detection is feasible using MFCC features and supervised learning models. The classifier is able to recognize emotional patterns in speech with reasonable accuracy, indicating that MFCCs effectively capture emotional cues such as pitch, tone, and intensity.

@@ -1,6 +1,9 @@
 # Emotion-Detection
 Speech based emotions detection using MATLAB 
 
+# Dataset
+[EmoDB](https://www.kaggle.com/datasets/piyushagni5/berlin-database-of-emotional-speech-emodb)
+
 # Methodology
 The emotion detection system is developed using a machine learning-based audio classification approach. The overall workflow consists of data preprocessing, feature extraction, model training, and evaluation.
 

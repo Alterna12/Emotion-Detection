@@ -106,6 +106,9 @@ Expected Output
     F1-score: 0.9498
 
 # Analysis
+
+Report : https://github.com/Alterna12/Emotion-Detection/blob/main/Laporan%20Emotion%20Detector.pdf
+
 The results confirm that audio-based emotion detection is highly effective using MFCC features and SVM classification. The classifier achieves excellent accuracy (94.92%), demonstrating that MFCCs effectively capture emotional cues related to pitch, tone, and spectral energy in speech.
 
 Misclassification primarily occurs between emotions with similar acoustic characteristics, such as happiness and anger (both high-energy states) or disgust and fear (sharing certain spectral patterns). This indicates that emotional overlap in speech can pose a challenge even for a well-performing system.
